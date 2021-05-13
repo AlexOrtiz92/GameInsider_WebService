@@ -4,7 +4,7 @@ const webpackDevMiddleware = require("webpack-dev-middleware")
 const webpackConfig = require("./webpack.config")
 const app = express()
 
-//webpack midleware
+//webpack middleware
 app.use(webpackDevMiddleware(webpack(webpackConfig)))
 
 app.use(express.static(__dirname + "/public"));

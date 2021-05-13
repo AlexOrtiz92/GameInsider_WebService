@@ -1,15 +1,17 @@
-import React from 'react';
-import { render } from 'react-dom';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+// import App from './App';
+import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
+import Home from "./components/home";
+import UserSpace from "./components/userSpace";
 
-
-
-render(
-  <App />,
-  document.getElementById('root')
+const Root = (
+  <BrowserRouter>
+    <Switch>
+      <Route path="/home" component={Home} />
+      <Route path="/userSpace" component={UserSpace} />
+    </Switch>
+  </BrowserRouter>
 );
 
-render(
-  <App />,
-  document.getElementById('app')
-);
+ReactDOM.render(Root, document.getElementById("root"));
